@@ -1,5 +1,5 @@
 import React from 'react'
-import {API_URL} from '../../../env'
+import {API_URL} from '../../constans/env'
 // import reactLogo from '../../assets/sayni.svg'
 
 export default function NavBar() {
