@@ -1,5 +1,6 @@
 
-import NavBar from "./NavBar/NavBar"
+import NavBar from "./organisms/NavBar/NavBar"
+import "../index.css"
 function App() {
     return (
       <>

@@ -1,0 +1,12 @@
+.categoriesListS{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 8px;
+    min-width: "100%";
+    min-height: 58px;
+    /* background-color: red;  */
+    /* padding: 8px 0; */
+    padding: 0;
+
+}

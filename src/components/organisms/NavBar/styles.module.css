@@ -1,0 +1,34 @@
+.container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas: "brand         .       cart"
+                         "categories categories categories";
+    grid-gap: 14px;
+    padding: 56px 28px 26px 28px;
+}
+.avatar{
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+}
+.brandArea{
+    max-width: 112px;
+    grid-area: brand;
+}
+.categoriesArea{
+    grid-area: categories;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+.cartArea{
+    grid-area: cart;grid-template-columns: 1fr 1fr;
+    display: grid;
+    align-items: center;
+
+}
