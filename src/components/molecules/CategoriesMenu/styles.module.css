@@ -1,12 +1,53 @@
 .categoriesListS{
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 8px;
     min-width: "100%";
     min-height: 58px;
-    /* background-color: red;  */
-    /* padding: 8px 0; */
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 8px;
     padding: 0;
-
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    overflow-x: scroll;
+    overflow-y: hidden;
 }
+
+    /* width */
+.categoriesListS::-webkit-scrollbar {
+    width: 4px;
+    height: 6px;
+    border-radius: 50px;
+}
+
+/* Track */
+.categoriesListS::-webkit-scrollbar-track {
+    background: var(--color-grey);
+    border-radius: 50px;
+}
+
+/* Handle */
+.categoriesListS::-webkit-scrollbar-thumb {
+    background: rgb(36, 37, 35); 
+    border-radius: 50px;
+}
+
+/* Handle on hover */
+.categoriesListS::-webkit-scrollbar-thumb:hover {
+    background: rgb(0, 0, 0); 
+    border-radius: 50px;
+    height: 8px;
+}
+
+@media (min-width: 600px){
+    .categoriesListS{
+        justify-content: flex-end;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 1000px) {
+    .categoriesListS{
+        width: calc(100vw - 100px - 178px - 130px - 86px);
+        justify-content: flex-end;
+    }
+}
+

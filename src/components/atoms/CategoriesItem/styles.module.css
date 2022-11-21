@@ -9,7 +9,10 @@
     padding: 16px 16px;
     cursor: pointer;
 }
-.categoriesItemS:hover{
+.categoriesItemS:hover,
+.categoriesItemS:active,
+.categoriesItemS:focus
+{
     background: #1A1A1A;
     color: #F7F6F9;;
 }

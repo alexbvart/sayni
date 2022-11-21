@@ -1,11 +1,12 @@
 .container{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 116px 1fr  86px;
     grid-template-rows: auto;
     grid-template-areas: "brand         .       cart"
+                         "search     search     search  "
                          "categories categories categories";
-    grid-gap: 14px;
-    padding: 56px 28px 26px 28px;
+    grid-gap: 16px;
+    padding: 32px 28px 20px 20px;
 }
 .avatar{
     width: 40px;
@@ -16,8 +17,13 @@
     max-width: 112px;
     grid-area: brand;
 }
+.searchArea{
+    grid-area: search;
+}
 .categoriesArea{
     grid-area: categories;
+    padding: 0;
+    margin: 0;
     -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
      -khtml-user-select: none; /* Konqueror HTML */
@@ -32,3 +38,12 @@
     align-items: center;
 
 }
+
+@media (min-width: 600px) {
+    .container{
+        grid-template-columns: 116px auto auto 86px;
+        grid-template-areas: "brand    search     categories       cart";
+        padding: 16px 24px;
+        /* max-width: 1200px; */
+    }
+  }
