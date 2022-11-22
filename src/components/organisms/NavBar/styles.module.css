@@ -1,5 +1,6 @@
 .container{
     display: grid;
+    align-items: center;
     grid-template-columns: 116px 1fr  86px;
     grid-template-rows: auto;
     grid-template-areas: "brand         .       cart"
@@ -39,11 +40,14 @@
 
 }
 
+
+
 @media (min-width: 600px) {
     .container{
         grid-template-columns: 116px auto auto 86px;
         grid-template-areas: "brand    search     categories       cart";
         padding: 16px 24px;
-        /* max-width: 1200px; */
+        max-width: 1200px;
+        margin: auto;
     }
-  }
+}
