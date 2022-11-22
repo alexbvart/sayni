@@ -10,9 +10,6 @@ export default function CategoriesMenu({className}) {
             {categoriesList.map((item,index) => 
                 <CategoriesItem value={item} key={index}/>
             )} 
-            {/* <CategoriesItem value="Clothes" /> 
-            <CategoriesItem value="Electronics" /> 
-            <CategoriesItem value="Furniture" />  */}
         </ul>
     )
 }
