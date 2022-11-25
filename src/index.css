@@ -9,6 +9,7 @@
   background-color: #242424;
   --color-grey: #F7F6F9;
   --color-active: #EDBEEA;
+  --color-bg-dark: #1A1A1A;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -40,6 +41,11 @@ h1 {
   line-height: 1.1;
 }
 
+.form{
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
 /* button {
   border-radius: 8px;
   border: 1px solid transparent;
