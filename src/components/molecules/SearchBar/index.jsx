@@ -8,14 +8,14 @@ export default function SearchBar({className}) {
     const handleChange = (e) => {
         setSearch(e.target.value)
     }
-  return (
+    return (
     <div className={`${className} ${searchBarContainer}`}>
 
         <button className={`${searchIcon}`}>
             <Loupe />
         </button>
         <input 
-            className={`${searchInput} unst`}
+            className={`${searchInput}`}
             value={search}
             placeholder="Search products"
             onChange={handleChange}
