@@ -1,0 +1,26 @@
+.listContainer{
+    width: 100%;
+    height: 100%;
+
+    display: grid;
+    align-items: center;
+    justify-content: center;
+
+    grid-template-columns: repeat(2,1fr);
+    padding: 54px 18px;
+    grid-gap: 18px;
+    box-sizing: border-box;
+}
+
+/* desktop sizes */
+
+@media (min-width: 800px) {
+
+    .listContainer{
+        max-width: 1200px;
+        grid-template-columns: repeat(3,1fr);
+        padding: 54px ;
+        grid-gap: 24px;
+    }
+
+}

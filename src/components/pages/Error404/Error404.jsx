@@ -1,13 +1,10 @@
 import React from 'react'
-import ItemListContainer from '../../organisms/NavBar/ItemListContainer'
-import NavBar from '../../organisms/NavBar/NavBar'
+import ItemListContainer from '../../organisms/ItemListContainer'
 
 export const Error404 = () => {
     return (
         <>
-            <NavBar />
             <ItemListContainer greeting={MsgError404()}/>
-
         </>
     )
 }

@@ -1,8 +1,16 @@
+import ItemCard from "../../molecules/ItemCard/ItemCard"
+import ItemListContainer from "../../organisms/ItemListContainer"
+
 function Home() {
     return (
       <>
-        {/* <NavBar />
-        <ItemListContainer greeting="greeting"/> */}
+        {/* <NavBar />*/}
+        <ItemListContainer>
+          <ItemCard />
+          <ItemCard />
+          <ItemCard />
+          <ItemCard />
+        </ItemListContainer> 
       </>
   )
 }
