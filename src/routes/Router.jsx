@@ -4,6 +4,7 @@ import { Error404 } from "../components/pages/Error404/Error404";
 import Home from "../components/pages/Home/Home";
 import Login from "../components/pages/Login/Login";
 import Products from "../components/pages/Products/Products";
+import Product from "../components/pages/Product/Product";
 import Layout from "../components/templates/Layout/Layout";
 
 const router = createBrowserRouter([
@@ -21,6 +22,14 @@ const router = createBrowserRouter([
             path:"/products",
             element: <Products />, 
             errorElement: <Error404/>
+        },
+        {
+            path: "/products/:id",
+            element: <Product />,
+        },
+        {
+            path: "/cart",
+            // element: <Cart />,
         },
         ]
     },

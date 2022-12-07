@@ -10,7 +10,7 @@ export default function CategoriesMenu({className}) {
     return (
         <ul className={`${categoriesListS} ${className}`}>
             {categories.map((item) => 
-                <CategoriesItem value={item.name} key={item.id}/>
+                <CategoriesItem value={item.name} key={`categorie_${item.id_category}`}/>
             )} 
         </ul>
     )
