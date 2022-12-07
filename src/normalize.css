@@ -82,6 +82,9 @@
     background-color: transparent;
     text-decoration: none;
   }
+  a:link, a:visited, a:active {
+    text-decoration:none;
+}
   
   /**
    * 1. Remove the bottom border in Chrome 57-

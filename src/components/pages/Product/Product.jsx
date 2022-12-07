@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import { formatPrice } from '../../../helpers/number'
 import Add from '../../../Icons/Add/Add'
 import BackIcon from '../../../Icons/Back/Back'
 import Bag from '../../../Icons/Bag/Bag'
@@ -47,8 +46,7 @@ export default function Products() {
               {units}
             </div>
             <div className={priceItem}>
-              {/* {formatPrice(units*product.price)} */}
-              {`S/.${units*product.price}.00`}
+              {`S/. ${units*product.price}.00`}
             </div>
           </div>
           <Remove onClick={removeItem} />  
