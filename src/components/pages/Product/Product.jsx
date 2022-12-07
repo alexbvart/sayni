@@ -46,7 +46,7 @@ export default function Products() {
               {units}
             </div>
             <div className={priceItem}>
-              {`S/.${units*product.price}.00`}
+              {`S/. ${units*product.price}.00`}
             </div>
           </div>
           <Remove onClick={removeItem} />  
