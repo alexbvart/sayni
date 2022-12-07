@@ -6,12 +6,12 @@ function Home() {
   console.log(products)
     return (
       <>
-
+        <h1>Best Seller</h1>
 
         <ItemListContainer>
           {
             products.map((item)=>(
-              <ItemCard key={item.name} price={item.price} name={item.name} img={item.default_image} />
+              <ItemCard key={`product_${item.id}`} price={item.price} name={item.name} img={item.default_image} id={item.id} />
             ))
           }
         </ItemListContainer> 

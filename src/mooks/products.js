@@ -3,7 +3,7 @@ const products = [
     {
 
         id_category: "1",
-
+        id: 1,
         name: "Polera Perla",
 
         colors: ["Rojo"],
@@ -23,7 +23,7 @@ const products = [
 
 
     {
-
+        id: 2,
         id_category: "1",
 
         name: "Polera Oversize",
@@ -45,7 +45,7 @@ const products = [
 
 
     {
-
+        id: 3,
         id_category: "2",
 
         name: "Kimono Steff",
@@ -67,7 +67,7 @@ const products = [
 
 
     {
-
+        id: 4,
         id_category: "2",
 
         name: "Kimono Lucy",
@@ -89,7 +89,7 @@ const products = [
 
 
     {
-
+        id: 5,
         id_category: "3",
 
         name: "Cardigan Ivanna",
@@ -111,7 +111,7 @@ const products = [
 
 
     {
-
+        id: 6,
         id_category: "4",
 
         name: "Cafarena Tull",
@@ -133,7 +133,7 @@ const products = [
 
 
     {
-
+        id: 7,
         id_category: "4",
 
         name: "Cafarena Alessandra",
@@ -155,7 +155,7 @@ const products = [
 
 
     {
-
+        id: 8,
         id_category: "4",
 
         name: "Cafarena Zara",
@@ -177,7 +177,7 @@ const products = [
 
 
     {
-
+        id: 9,
         id_category: "4",
 
         name: "Cafarena Sofia",

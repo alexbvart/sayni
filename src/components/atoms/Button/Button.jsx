@@ -4,7 +4,8 @@ import {buttonContainer,skip} from './styles.module.css'
 export default function Button({
     classname,
     type,
-    text
+    text,
+    icon =<Skip />
 }) {
     return (
         <button 
@@ -13,7 +14,7 @@ export default function Button({
         >
             {text}
             <div className={skip} > 
-                <Skip />
+                {icon}
             </div>
         </button>
     )

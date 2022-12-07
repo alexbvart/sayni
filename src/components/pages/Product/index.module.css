@@ -1,0 +1,71 @@
+.productGrid{
+    display: grid;
+    grid-template-areas: "name"
+                        "image"
+                        "cart";
+    grid-gap: 20px;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+} 
+.nameArea{
+    grid-area: name;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-height: 150px;
+}
+.imageArea{
+    grid-area: image;
+    /* max-height: 300px; */
+}
+.imageArea img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    user-select: none;
+}
+.cartArea{
+    grid-area: cart;
+}
+.counterSection{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.counterPriceItem{
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+    user-select: none;
+}
+.counterItem{
+    font-weight: 700;
+    font-size: 48px;
+}
+.priceItem{
+    padding: 16px 32px;
+    background-color: var(--color-active);
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 18px;
+}
+@media (max-width: 600px) {
+    .imageArea img{
+        max-height: 280px;
+    }
+}
+
+/* Destok */
+@media (min-width: 600px) {
+    .productGrid{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-areas: "image name"
+                             "image cart";
+                            
+    }
+}
