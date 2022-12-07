@@ -1,8 +1,20 @@
+import ItemCard from "../../molecules/ItemCard/ItemCard"
+import ItemListContainer from "../../organisms/ItemListContainer"
+import products from '../../../mooks/products'
+
 function Home() {
+  console.log(products)
     return (
       <>
-        {/* <NavBar />
-        <ItemListContainer greeting="greeting"/> */}
+        <h1>Best Seller</h1>
+
+        <ItemListContainer>
+          {
+            products.map((item)=>(
+              <ItemCard key={`product_${item.id}`} price={item.price} name={item.name} img={item.default_image} id={item.id} />
+            ))
+          }
+        </ItemListContainer> 
       </>
   )
 }

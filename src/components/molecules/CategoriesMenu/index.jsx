@@ -1,14 +1,16 @@
 import React from 'react'
 import CategoriesItem from '../../atoms/CategoriesItem/CategoriesItem';
 import {categoriesListS} from './styles.module.css'
+import categories from '../../../mooks/categories'
 
 export default function CategoriesMenu({className}) {
 
-    const categoriesList = ["Clothes","Electronics","Furniture","Shoes","Others"];
+
+    console.log(categories)
     return (
         <ul className={`${categoriesListS} ${className}`}>
-            {categoriesList.map((item,index) => 
-                <CategoriesItem value={item} key={index}/>
+            {categories.map((item) => 
+                <CategoriesItem value={item.name} key={`categorie_${item.id_category}`}/>
             )} 
         </ul>
     )
