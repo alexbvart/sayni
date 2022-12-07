@@ -14,7 +14,7 @@
 
 /* desktop sizes */
 
-@media (min-width: 800px) {
+@media (min-width: 1000px) {
 
     .listContainer{
         max-width: 1200px;

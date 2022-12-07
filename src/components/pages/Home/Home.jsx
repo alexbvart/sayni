@@ -1,15 +1,19 @@
 import ItemCard from "../../molecules/ItemCard/ItemCard"
 import ItemListContainer from "../../organisms/ItemListContainer"
+import products from '../../../mooks/products'
 
 function Home() {
+  console.log(products)
     return (
       <>
-        {/* <NavBar />*/}
+
+
         <ItemListContainer>
-          <ItemCard />
-          <ItemCard />
-          <ItemCard />
-          <ItemCard />
+          {
+            products.map((item)=>(
+              <ItemCard key={item.name} price={item.price} name={item.name} img={item.default_image} />
+            ))
+          }
         </ItemListContainer> 
       </>
   )

@@ -1,34 +1,60 @@
 .itemList{
     height: 216px;
     width: 100%;
-    background: #aeefdc;
+
     border-radius: 50px;
-    background-image: url(https://images.unsplash.com/photo-1670261140885-30ae06e26b2a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=686&q=80);
+    /* background-image: url(https://images.unsplash.com/photo-1620799140188-3b2a02fd9a77?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1072&q=80); */
+    /* background-image: url(); */
+    /* background-image: url(https://images.unsplash.com/photo-1520591799316-6b30425429aa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80); */
     background-size: cover;
 
-    padding: 10px;
+    padding: 14px;
     box-sizing: border-box;
 
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    /* font-family: 'Poppins'; */
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 28px;
+
+    text-transform: capitalize;
+    color: var(--color-bg-dark);
 }
 
 .addToCart{
     width: 100%;
-    height: 40px;
+    height: 64px;
     background: linear-gradient(199.93deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.366) 100%);
-    backdrop-filter: blur(7.14672px);
+    backdrop-filter: blur(24px);
     /* Note: backdrop-filter has minimal browser support */
 
-    border-radius: 22px;
-    padding: 3px;
+    border-radius: 220px;
+    padding: 6px 6px 6px 22px;
 
     display: flex;
     justify-content: space-between;
     align-content: center;
+    align-items: center;
+
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 30px;
 }
 
+.bagWrapper{
+    width: 48px;
+    height: 100%;
+    background-color: var(--color-bg-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+}
 
 /* desktop sizes */
 
@@ -38,6 +64,20 @@
         height: 422px;
         padding: 22px;
 
-    }
+        font-style: normal;
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 52px;
 
+    }
+    .addToCart{
+        font-style: normal;
+        font-weight: 700;
+        font-size: 18px;
+        height: 80px;
+        padding: 6px 6px 6px 40px;
+    }
+    .bagWrapper{
+        width: 80px;
+    }
 }
