@@ -3,7 +3,7 @@ import ItemListContainer from "../../organisms/ItemListContainer"
 import products from '../../../mooks/products'
 
 function Home() {
-  console.log(products)
+
     return (
       <>
         <h1>Best Seller</h1>

@@ -7,6 +7,8 @@ import Products from "../components/pages/Products/Products";
 import Product from "../components/pages/Product/Product";
 import Layout from "../components/templates/Layout/Layout";
 import Category from "../components/pages/Category/Category";
+import Cart from "../components/atoms/Cart";
+import { CartPage } from "../components/pages/Cart/Cart";
 
 const router = createBrowserRouter([
     {
@@ -34,7 +36,7 @@ const router = createBrowserRouter([
         },
         {
             path: "/cart",
-            // element: <Cart />,
+            element: <CartPage />,
         },
         ]
     },

@@ -1,5 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
+import { useCart } from '../../../hooks/useCart'
+import { useCounter } from '../../../hooks/useCounter'
+import { useToggle } from '../../../hooks/useToggle'
 import Add from '../../../Icons/Add/Add'
 import BackIcon from '../../../Icons/Back/Back'
 import Bag from '../../../Icons/Bag/Bag'
@@ -11,23 +14,22 @@ import {productGrid, nameArea,imageArea,cartArea,counterSection,counterPriceItem
 
 export default function Products() {
   const params = useParams()
-  const product = products[params.id-1]
-  const navigate = useNavigate();
-  const [units, setUnits] = useState(1)
-
-  const addItem = () => {
-    if (product.stock && units>=product.stock) {
-      return
-    }
-    setUnits(units+1)
-  }
-  const removeItem = () => {
-    if (units<=1) {
-      return
-    }
-    setUnits(units-1)
-  }
   
+  const product = products[params.id-1]
+
+  const {units,addItem,removeItem} = useCounter(product);
+  const {state,addItemToCart,removeToCart} = useCart({...product, units});
+  const navigate = useNavigate();
+  const [buttonCart, toggler] = useToggle(true)
+
+  const addCart = () =>{ addItemToCart(); toggler(!buttonCart) }
+  const removeCart = () =>{ removeToCart(); toggler(!buttonCart)}
+
+  console.log({state})
+  if (product.stock && units > product.stock) {
+    console.log("No tenemos mas stock",{state})
+    return
+}
 
   return (
     <div className={productGrid}>
@@ -48,10 +50,25 @@ export default function Products() {
             <div className={priceItem}>
               {`S/. ${units*product.price}.00`}
             </div>
+            <p> In stock, only {product.stock}</p>
           </div>
           <Remove onClick={removeItem} />  
         </section>
-        <Button type="submit" text="Add to cart" icon={<Bag color="#000"/>}/>
+        
+        {
+          buttonCart ?
+          <Button type="submit" 
+          text="Add to cart" 
+          icon={<Bag color="#000"/>} 
+          onClick={addCart}
+          />
+          :
+          <Button type="submit" 
+            text="Remove to cart"  
+            onClick={removeCart}
+          />
+        }
+        
       </div>
     </div>
   )
