@@ -18,18 +18,13 @@ export default function Products() {
   const product = products[params.id-1]
 
   const {units,addItem,removeItem} = useCounter(product);
-  const {state,addItemToCart,removeToCart} = useCart({...product, units});
+  const {addItemToCart,removeToCart} = useCart({...product, units});
   const navigate = useNavigate();
   const [buttonCart, toggler] = useToggle(true)
 
   const addCart = () =>{ addItemToCart(); toggler(!buttonCart) }
   const removeCart = () =>{ removeToCart(); toggler(!buttonCart)}
 
-  console.log({state})
-  if (product.stock && units > product.stock) {
-    console.log("No tenemos mas stock",{state})
-    return
-}
 
   return (
     <div className={productGrid}>

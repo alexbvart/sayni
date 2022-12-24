@@ -1,0 +1,82 @@
+.itemCart{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    user-select: none;
+}
+.itemCart:hover{
+    background: rgb(20, 18, 18);
+    border-radius: 20px;
+}
+.image{
+    height: 80px;
+    min-width: 80px;
+    max-width: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.infoPrice{
+    width: 100%;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    /* flex-direction: column; */
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+}
+.infoItem{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 24px;
+}
+h2{
+    /* font-size: 20px; */
+}
+.unitPrice{
+    /* font-size: 16px */
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.totalPrice{
+    width: 100%;
+    max-width: 120px;
+    padding: 2px 14px;
+    background-color: var(--color-grey);
+    color: var(--color-bg-dark);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    font-weight: 700;
+}
+
+.buttonsS{
+    display: flex;
+    color: #fff;
+    justify-content: space-between;
+}
+
+.buyLater{
+    height: 34px;
+    border: 1px solid #FFFFFF;
+    border-radius: 27.1473px;
+    padding: 0px 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buyCounter{
+    height: 34px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 27.1473px;
+    padding: 0px 24px;
+    gap: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+}

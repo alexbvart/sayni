@@ -24,6 +24,7 @@ body {
   min-width: 320px;
   min-height: 100vh;
   background: linear-gradient(180deg, #FFFFFF 0%, #EBEBEB 100%);  
+  color: var(--color-bg-dark);
 }
 
 h1 {
@@ -60,7 +61,7 @@ button {
   all: unset;
 }
 
-@media (prefers-color-scheme: light) {
+/* @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
     background: linear-gradient(180deg, #FFFFFF 0%, #EBEBEB 100%);  
@@ -70,8 +71,6 @@ button {
 @media (prefers-color-scheme: dark) {
   :root {
     color: var(--color-grey );
-    background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0.53) 100%);
-
-    
+    background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0.53) 10%);
   }
-}
+} */

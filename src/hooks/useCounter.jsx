@@ -2,7 +2,8 @@ import { useState } from "react"
 
 
 export const useCounter = (product) => {
-    const [units, setUnits] = useState(1)
+    console.log({product})
+    const [units, setUnits] = useState(product.units|1)
 
     const addItem = () => {
         if (product.stock && units >= product.stock) {
