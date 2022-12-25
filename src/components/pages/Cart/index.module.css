@@ -38,3 +38,19 @@
     gap: 48px;
     border-radius: 50px;
 }
+
+.totalAmount{
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-active);
+    color: var(--color-bg-dark);
+    padding: 24px 36px;
+    border-radius: 20px;
+    font-weight: 500;
+    font-size: 16px;
+    
+}
+.totalAmount span{
+    font-weight: 700;
+    font-size: 24px;
+}

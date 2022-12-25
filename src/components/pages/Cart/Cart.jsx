@@ -1,9 +1,17 @@
 import React from 'react'
 import { useCart } from '../../../hooks/useCart'
-import {title,cartListS,counterProducts} from './index.module.css'
+import {title,cartListS,counterProducts,totalAmount} from './index.module.css'
 import { ItemCart } from '../../atoms/CartItem/ItemCart';
+import { formatPrice } from '../../../helpers/number';
 export const CartPage = () => {
     const { state } = useCart();
+
+    const totalOrderCost = state.cart.length > 0
+                            ? state.cart
+                                .map((item) => item.price * item.units )
+                                .reduce((previous, current) => previous + current 
+                            )
+                            : 0;
 
     return (
         <div className=''>
@@ -21,6 +29,10 @@ export const CartPage = () => {
                             <ItemCart key={item.id} item={item}/>
                         ))
                     }
+                    <div key='totalAmount' className={totalAmount}>
+                        Total Amonut &nbsp; <br/>
+                        <span>{formatPrice(totalOrderCost)}</span>
+                    </div>
                 </ul>
             }
         </div>

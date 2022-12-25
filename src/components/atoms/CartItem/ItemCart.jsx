@@ -6,6 +6,7 @@ import Less from '../../../Icons/Remove/Less'
 import More from '../../../Icons/Add/More'
 import { formatPrice } from '../../../helpers/number'
 import { Link } from 'react-router-dom'
+import { Alert } from '../Alert/Alert'
 
 export const ItemCart = ({item}) => {
 
@@ -48,6 +49,10 @@ export const ItemCart = ({item}) => {
             <Less onClick={removeItem} />  
           </div>
         </div>
+
+        {units>=item.stock &&
+                    <Alert> Sorry! In stock, only {item.stock} </Alert>
+        }
     </div>
   )
 }
