@@ -21,9 +21,14 @@
 
 .cartListS{
     width: 100%;
-
+    min-width: 320px;
     max-width: 500px;
     margin: auto;
+
+    position: absolute;
+    right: 0;
+    left: 0;
+    /* bottom: 0; */
 
     background-color: var(--color-bg-dark);
     padding:  64px 22px;

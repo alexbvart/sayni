@@ -1,6 +1,6 @@
 import { useContext } from "react"
 import { CartContext } from "../context/CartContext/CartContext"
-import { ADD_TO_CART, REMOVE_FROM_CART } from "../context/CartContext/types"
+import { ADD_TO_CART, MODIFY_CART_ITEM, REMOVE_FROM_CART } from "../context/CartContext/types"
 
 export const useCart = (product) => {
     const {state,dispatch} = useContext(CartContext)
@@ -18,8 +18,15 @@ export const useCart = (product) => {
             payload: product,
         })
     }
+    const modify_cart_item = () =>{
+        dispatch({
+            type: MODIFY_CART_ITEM,
+            payload: product,
+        })
+    }
+    
 
-    return {state,addItemToCart,removeToCart}
+    return {state,addItemToCart,removeToCart,modify_cart_item}
 }
 
 

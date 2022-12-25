@@ -2,7 +2,7 @@ import React from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { useCart } from '../../../hooks/useCart'
 import { useCounter } from '../../../hooks/useCounter'
-import { useToggle } from '../../../hooks/useToggle'
+// import { useToggle } from '../../../hooks/useToggle'
 import Add from '../../../Icons/Add/Add'
 import BackIcon from '../../../Icons/Back/Back'
 import Bag from '../../../Icons/Bag/Bag'
@@ -13,18 +13,14 @@ import {productGrid, nameArea,imageArea,cartArea,counterSection,counterPriceItem
 
 
 export default function Products() {
+
   const params = useParams()
+  const navigate = useNavigate();
   
   const product = products[params.id-1]
-
   const {units,addItem,removeItem} = useCounter(product);
-  const {addItemToCart,removeToCart} = useCart({...product, units});
-  const navigate = useNavigate();
-  const [buttonCart, toggler] = useToggle(true)
-
-  const addCart = () =>{ addItemToCart(); toggler(!buttonCart) }
-  const removeCart = () =>{ removeToCart(); toggler(!buttonCart)}
-
+  
+  const {state,addItemToCart,removeToCart} = useCart({...product, units});
 
   return (
     <div className={productGrid}>
@@ -51,17 +47,18 @@ export default function Products() {
         </section>
         
         {
-          buttonCart ?
-          <Button type="submit" 
-          text="Add to cart" 
-          icon={<Bag color="#000"/>} 
-          onClick={addCart}
-          />
+          !state.cart.find((item) => item.id === product.id) 
+          ?
+            <Button type="submit" 
+              text="Add to cart" 
+              icon={<Bag color="#000"/>} 
+              onClick={addItemToCart}
+            />
           :
-          <Button type="submit" 
-            text="Remove to cart"  
-            onClick={removeCart}
-          />
+            <Button type="submit" 
+              text="Remove to cart"  
+              onClick={removeToCart}
+            />
         }
         
       </div>
