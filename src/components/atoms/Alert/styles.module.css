@@ -1,0 +1,9 @@
+.alertS{
+    background-color: var(--color-active);
+    position: sticky;
+    bottom: 0;
+    border-radius:  4px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}

@@ -5,12 +5,12 @@ import { useCart } from '../../../hooks/useCart'
 import Less from '../../../Icons/Remove/Less'
 import More from '../../../Icons/Add/More'
 import { formatPrice } from '../../../helpers/number'
+import { Link } from 'react-router-dom'
 
 export const ItemCart = ({item}) => {
 
   const {units,addItem,removeItem} = useCounter(item);
-  const {modify_cart_item,removeToCart} = useCart({...item, units});
-  
+  const {modify_cart_item,removeToCart} = useCart({...item, units}); 
   const debounceRef = useRef();
 
   useEffect(() => {
@@ -23,7 +23,6 @@ export const ItemCart = ({item}) => {
       }, 1000)
     }
     onUnitsChange()
-
     return () => { }
   }, [units])
   
@@ -32,10 +31,10 @@ export const ItemCart = ({item}) => {
         <div className={infoItem}>
             <img alt={item.name} src={item.default_image} className={image}/>
             <div className={infoPrice}>
-                <div>
-                <h2>{item.name}</h2>
-                <p className={unitPrice}>Unit price: {formatPrice(item.price)}</p>
-                </div>
+                <Link   to={`/products/${item.id}`}>
+                  <h2>{item.name}</h2>
+                  <p className={unitPrice}>Unit price: {formatPrice(item.price)}</p>
+                </Link>
                 <div className={totalPrice}> {formatPrice(item.price*units)}</div>
             </div>
         </div>

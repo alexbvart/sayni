@@ -1,5 +1,6 @@
 import React from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
+import { formatPrice } from '../../../helpers/number'
 import { useCart } from '../../../hooks/useCart'
 import { useCounter } from '../../../hooks/useCounter'
 // import { useToggle } from '../../../hooks/useToggle'
@@ -8,32 +9,39 @@ import BackIcon from '../../../Icons/Back/Back'
 import Bag from '../../../Icons/Bag/Bag'
 import Remove from '../../../Icons/Remove/Remove'
 import products from '../../../mooks/products'
+import { Alert } from '../../atoms/Alert/Alert'
 import Button from '../../atoms/Button/Button'
-import {productGrid, nameArea,imageArea,cartArea,counterSection,counterPriceItem,counterItem,priceItem} from './index.module.css'
+import {productGrid, nameArea,imageArea,cartArea,counterSection,counterPriceItem,counterItem,priceItem,botonsS} from './index.module.css'
 
 
 export default function Products() {
 
   const params = useParams()
   const navigate = useNavigate();
-  
+
   const product = products[params.id-1]
-  const {units,addItem,removeItem} = useCounter(product);
-  
-  const {state,addItemToCart,removeToCart} = useCart({...product, units});
+  const {state} = useCart(product);
+
+  const isItemInCart =  state.cart.find((item) => item.id === product.id && item);
+
+  const {units,addItem,removeItem} = useCounter(isItemInCart ||product);  
+  const {addItemToCart,removeToCart} = useCart({...product, units});
 
   return (
     <div className={productGrid}>
       <div className={nameArea}> 
-        <h1> {product.name}</h1>
-          <BackIcon  onClick={() => navigate(-1)} />
+        <div>
+          <h1>{product.name}</h1>
+          <p >Unit price: {formatPrice(product.price)}</p>
+        </div>
+        <BackIcon  onClick={() => navigate(-1)} />
       </div>
       <div className={imageArea}>
         <img src={product.default_image} alt={product.name} />
       </div>
       <div className={cartArea}> 
         <section className={counterSection}> 
-          <Add onClick={addItem} /> 
+          { !isItemInCart && <Add onClick={addItem} /> }
           <div className={counterPriceItem}>
             <div className={counterItem}>
               {units}
@@ -43,25 +51,31 @@ export default function Products() {
             </div>
             <p> In stock, only {product.stock}</p>
           </div>
-          <Remove onClick={removeItem} />  
+          { !isItemInCart && <Remove onClick={removeItem} />}
         </section>
         
         {
-          !state.cart.find((item) => item.id === product.id) 
+          !isItemInCart
           ?
-            <Button type="submit" 
+            <Button 
+              type="submit" 
               text="Add to cart" 
               icon={<Bag color="#000"/>} 
               onClick={addItemToCart}
             />
           :
-            <Button type="submit" 
-              text="Remove to cart"  
-              onClick={removeToCart}
-            />
+            <div className={botonsS}>
+              <Link  to={"/cart"}>
+                <Button type="submit" text="Go to cart" />
+              </Link>
+              <Button type="submit" text="Remove to cart" onClick={removeToCart} />
+            </div>
         }
         
       </div>
+      {units>=product.stock &&
+        <Alert> Sorry! In stock, only {product.stock} </Alert>
+      }
     </div>
   )
 }
