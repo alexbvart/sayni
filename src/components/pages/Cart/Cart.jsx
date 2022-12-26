@@ -3,6 +3,8 @@ import { useCart } from '../../../hooks/useCart'
 import {title,cartListS,counterProducts,totalAmount} from './index.module.css'
 import { ItemCart } from '../../atoms/CartItem/ItemCart';
 import { formatPrice } from '../../../helpers/number';
+import { SayniLoader } from '../../atoms/Loader/SayniLoader';
+
 export const CartPage = () => {
     const { state } = useCart();
 
@@ -15,6 +17,9 @@ export const CartPage = () => {
 
     return (
         <div className=''>
+
+            {/* <SayniLoader /> */}
+
             <div className={title}>
                 <h1> Cart</h1> 
                 {state.cart.length> 0 && <div className={counterProducts}>{state.cart.length}</div>}
