@@ -13,6 +13,11 @@
 }
 
 /* desktop sizes */
+@media (min-width: 1000px) {
+    .listContainer{
+        padding: 32px 0;
+    }
+}
 
 @media (min-width: 1000px) {
 
