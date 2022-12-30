@@ -4,6 +4,15 @@
     align-items: center;
     gap: 24px;
 }
+
+.cartEmpty{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 24px;
+}
+
 .counterProducts{
     width: 36px;
     height: 36px;

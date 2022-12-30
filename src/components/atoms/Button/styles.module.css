@@ -1,6 +1,7 @@
 .buttonContainer{
     height: 90px;
     width: 100%;
+    min-width: 300px;
     max-width: 600px;
     padding: 12px 12px 12px 64px ;
 
