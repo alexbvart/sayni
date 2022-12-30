@@ -5,10 +5,13 @@ import router from './routes/Router'
 import "./index.css"
 import "./normalize.css"
 import { CartProvider } from './context/CartContext/CartContext'
+import { UserProvider } from './context/UserContext/UserContext'
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <CartProvider>
-    <RouterProvider router={router} />
-  </CartProvider>
+  <UserProvider>
+    <CartProvider>
+      <RouterProvider router={router} />
+    </CartProvider>
+  </UserProvider>
 )

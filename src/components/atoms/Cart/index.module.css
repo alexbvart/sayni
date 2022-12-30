@@ -1,6 +1,6 @@
 .cartContainer{
-    /* background-color: red; */
     position: relative;
+    display: flex;
 }
 
 .counterProducts{

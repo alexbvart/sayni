@@ -1,5 +1,22 @@
-import React from 'react'
+import { createContext, useState } from 'react'
 
-export const UserContext = () => {
-    
+const UserContext = createContext()
+
+const UserEnptyState = {
+    email : '',
+    password: '',
 }
+
+const UserProvider = ({children}) =>{
+    const [user, setUser] = useState(UserEnptyState)
+
+    return(
+        <UserContext.Provider
+            value={{user, setUser}}
+        >
+            {children}
+        </UserContext.Provider>
+    )
+}
+
+export {UserContext,UserProvider}

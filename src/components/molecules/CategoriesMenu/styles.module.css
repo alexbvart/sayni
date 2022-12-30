@@ -1,5 +1,6 @@
 .categoriesListS{
     min-width: "100%";
+    width: 100%;
     min-height: 58px;
     display: flex;
     flex-direction: row;
@@ -40,12 +41,12 @@
     height: 8px;
 }
 
-@media (min-width: 600px) and (max-width: 1000px) {
+/* @media (min-width: 600px) and (max-width: 1000px) {
     .categoriesListS{
         width: calc(100vw - 100px - 178px - 130px - 86px);
     }
     
-}
+} */
 
 /* @media (min-width: 600px){
     .categoriesListS{
@@ -54,7 +55,7 @@
 } */
 
 
-@media (min-width: 1000px) {
+@media (min-width: 6000px) {
     .categoriesListS{
         overflow-x: hidden;
         justify-content: flex-end;

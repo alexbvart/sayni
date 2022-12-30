@@ -1,7 +1,7 @@
 .container{
     display: grid;
     align-items: center;
-    grid-template-columns: 116px 1fr  86px;
+    grid-template-columns: 116px 1fr  minmax(86px, auto) ;
     grid-template-rows: auto;
     grid-template-areas: "brand         .       cart"
                          "search     search     search  "
@@ -34,17 +34,43 @@
                                   supported by Chrome, Edge, Opera and Firefox */
 }
 .cartArea{
-    grid-area: cart;grid-template-columns: 1fr 1fr;
+    grid-area: cart;grid-template-columns: auto auto;
     display: grid;
     align-items: center;
+    justify-items: center;
+    align-content: center;
+    grid-gap: 8px;
+}
 
+.userContent{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 4px;
+}
+.userContent a,
+.userContent button{
+    color: var(--color-bg-dark);
+    background: var(--color-grey);
+    border-radius: 38px;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    padding: 16px 16px;
+    cursor: pointer;
+}
+.userContent a:hover,
+.userContent button:hover{
+    background : var(--color-bg-dark);
+    color: var(--color-grey);
 }
 
 
 
 @media (min-width: 600px) {
     .container{
-        grid-template-columns: 116px auto auto 86px;
+        grid-template-columns: auto  minmax(100px,1fr)  auto minmax(86px, auto) ;
         grid-template-areas: "brand    search     categories       cart";
         padding: 16px 24px;
         max-width: 1200px;

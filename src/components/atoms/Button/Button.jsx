@@ -6,7 +6,7 @@ export default function Button({
     onClick,
     type,
     text,
-    icon =<Skip />
+    icon
 }) {
     return (
         <button 
@@ -16,7 +16,7 @@ export default function Button({
         >
             {text}
             <div className={skip} > 
-                {icon}
+                {icon ? icon : <Skip />}
             </div>
         </button>
     )

@@ -1,7 +1,7 @@
 import { ADD_TO_CART, CLEAR_CART, MODIFY_CART_ITEM, REMOVE_FROM_CART } from "./types"
 
 const CartReducer = (state, action) => {
-    // console.log(state, action);
+
     switch (action.type) {
         case ADD_TO_CART:{
             let isExistsInCart = state.cart.find((item) => item.id === action.payload.id);
