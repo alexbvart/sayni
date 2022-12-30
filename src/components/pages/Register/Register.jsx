@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { BasicLayout } from '../../templates/BasicLayout/BasicLayout'
 import { FormCard } from '../../organisms/FormCard/FormCard'
 
@@ -8,21 +8,22 @@ import Input from '../../molecules/Input/Input'
 import Button from '../../atoms/Button/Button'
 import Avatar from '../../../Icons/Avatar/Avatar'
 import PassIcon from '../../../Icons/PassIcon/PassIcon'
-import { Link } from 'react-router-dom'
+import { Link, Navigate } from 'react-router-dom'
 import { ErrorAlert } from '../../atoms/Alert/ErrorAlert'
 
 export default function Register() {
-
+    const [localUser, setLocalUser] = useState({})
     const { user, setUser, singUp, error } = useUser()
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        setUser(localUser)
         singUp(user.email, user.password)
     }
     const handleChange = ({ target: { name, value } }) => {
-        setUser({ ...user, [name]: value })
+        setLocalUser({ ...localUser, [name]: value })
     }
-
+    if (user?.accessToken) return <Navigate to='/' />
     return (
         <BasicLayout>
             <FormCard text='Create your account'>

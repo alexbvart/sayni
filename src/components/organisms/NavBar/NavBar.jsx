@@ -14,7 +14,7 @@ import { useUser } from '../../../hooks/useUser'
 export default function NavBar() {
 
   const { user,logOut } = useUser();
-  console.log(user.displayName);
+  const photoURL = user?.photoURL;
 
   return (
     <div className={container}>
@@ -32,7 +32,7 @@ export default function NavBar() {
             </>
             :
             <>
-              <Avatar className={avatar}/>
+              <Avatar className={avatar} image={photoURL} />
               <button onClick={() => logOut()}>Logout</button>
             </>
           }

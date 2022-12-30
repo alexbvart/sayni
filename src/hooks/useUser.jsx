@@ -10,8 +10,8 @@ export const useUser = () => {
     const { user, setUser } = useContext(UserContext)
     const navigate = useNavigate()
 
-    const ErrorEnptyState = { errorCode: '', errorMessage : ''}
-    const [error, setError] = useState(ErrorEnptyState)
+    const ErrorEmptyState = { errorCode: '', errorMessage: '' }
+    const [error, setError] = useState(ErrorEmptyState)
     // if ()  throw new Error('There is not auth user-provider')
 
     // useEffect(() => {
@@ -22,38 +22,38 @@ export const useUser = () => {
     //         // service.setToken(user.token)
     //     }
     // }, [])
-    useEffect(() => { 
-        userObserver(setUser); 
-        console.log(user,"observer"); 
+    useEffect(() => {
+        userObserver(setUser);
+        console.log(user, "observer");
         // return () => userObserver();
     }, [])
-    
 
-    const logOut = async() => {
-        setError(ErrorEnptyState)
+
+    const logOut = async () => {
+        setError(ErrorEmptyState)
         try {
             await singOutService()
             await setUser(null)
             navigate("/login")
         } catch (error) {
-            const {code: errorCode, message: errorMessage} = error;
-            setError({errorCode,errorMessage})
+            const { code: errorCode, message: errorMessage } = error;
+            setError({ errorCode, errorMessage })
         }
         // window.localStorage.removeItem(localUser)
     }
 
-    const logIn = async (email, password ) => {
-        setError(ErrorEnptyState)
-        loginService(email, password) 
+    const logIn = async (email, password) => {
+        setError(ErrorEmptyState)
+        loginService(email, password)
             .then((userCredential) => {
                 // Signed in 
                 // const {user} = userCredential;
-                navigate("/")
+                navigate('/')
             })
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
-                setError({errorCode,errorMessage})
+                setError({ errorCode, errorMessage })
             });
 
         //  window.localStorage.setItem(
@@ -63,33 +63,31 @@ export const useUser = () => {
         //  setUser(user)
     }
 
-    const loginWithGoogle = async () => {
-        setError(ErrorEnptyState)
+    const loginWithGoogle = async() => {
+        setError(ErrorEmptyState)
         try {
             await loginWithGoogleService();
             navigate("/")
         } catch (error) {
             console.log(error);
-            const {code: errorCode, message: errorMessage} = error;
-            setError({errorCode,errorMessage})
+            const { code: errorCode, message: errorMessage } = error;
+            setError({ errorCode, errorMessage })
         }
-        
     }
 
 
     const singUp = (email, password) => {
-        setError(ErrorEnptyState)
-        singUpService(email, password) 
+        setError(ErrorEmptyState)
+        singUpService(email, password)
             .then((userCredential) => {
                 navigate("/")
             })
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
-                setError({errorCode,errorMessage})
+                setError({ errorCode, errorMessage })
             });
-        
     }
 
-    return { user,setUser, logIn, loginWithGoogle, singUp, logOut, error }
+    return { user, setUser, logIn, loginWithGoogle, singUp, logOut, error }
 }

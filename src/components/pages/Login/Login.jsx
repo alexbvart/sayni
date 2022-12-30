@@ -1,5 +1,5 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState } from 'react'
+import { Link, Navigate } from 'react-router-dom'
 import { useUser } from '../../../hooks/useUser'
 import Avatar from '../../../Icons/Avatar/Avatar'
 import PassIcon from '../../../Icons/PassIcon/PassIcon'
@@ -11,16 +11,20 @@ import { BasicLayout } from '../../templates/BasicLayout/BasicLayout'
 
 export default function Login() {
 
+    const [localUser, setLocalUser] = useState({})
     const { user, setUser, logIn,  error } = useUser()
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        setUser(localUser)
         logIn(user.email, user.password)
     }
     const handleChange = ({ target: { name, value } }) => {
-        setUser({ ...user, [name]: value })
+        setLocalUser({ ...localUser, [name]: value })
     }
 
+    if (user?.accessToken) return <Navigate to='/' />
+    
     return (
         <>
             <BasicLayout>
