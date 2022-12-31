@@ -6,13 +6,17 @@ export default function Button({
     onClick,
     type,
     text,
-    icon
+    icon,
+    isDisabled
 }) {
+    const styleDisabled = isDisabled ? { opacity: '0.6'} : {};
     return (
         <button 
             onClick={onClick}
-            className={`${buttonContainer} ${classname}`} 
+            style={styleDisabled }
+            className={`${buttonContainer} ${classname} `} 
             type={type}
+            disabled={isDisabled}
         >
             {text}
             <div className={skip} > 

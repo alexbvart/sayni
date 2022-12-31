@@ -62,6 +62,9 @@ button {
 .unstyle {
   all: unset;
 }
+.marginflex{
+  margin: auto;
+}
 
 /* @media (prefers-color-scheme: light) {
   :root {

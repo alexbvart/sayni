@@ -10,7 +10,6 @@ export const useOrder = () => {
     const navigate = useNavigate()
     const { id }  = useParams()
 
-    console.log();
     const { clearCart } = useCart()
 
     const [order, setOrder] = useState({})

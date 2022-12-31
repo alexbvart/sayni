@@ -25,7 +25,7 @@ export default function NavBar() {
       <div className={cartArea}>
         <Cart />
         <ul className={userContent}>
-          {!user ?
+          {!user.id ?
             <>
               <Link to='/login'>Login</Link>
               <Link to={'/register'}>Register</Link>

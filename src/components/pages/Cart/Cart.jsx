@@ -1,15 +1,20 @@
 import React from 'react'
 import { useCart } from '../../../hooks/useCart'
-import { title,cartEmpty, cartListS, counterProducts, totalAmount } from './index.module.css'
+import { title, cartEmpty, cartListS, counterProducts, totalAmount } from './index.module.css'
 import { ItemCart } from '../../atoms/CartItem/ItemCart';
 import { formatPrice } from '../../../helpers/number';
 import Button from '../../atoms/Button/Button';
 import { useOrder } from '../../../hooks/useOrder';
 import cartIcon from '../../../assets/cart.svg'
 import { Link } from 'react-router-dom';
+import { useUser } from '../../../hooks/useUser';
+
 export const CartPage = () => {
     const { state } = useCart();
     const { buyNow } = useOrder();
+    const { user } = useUser();
+
+    const isDisabled = !user.id > 0;
 
     const totalOrderCost = state.cart.length > 0
         ? state.cart
@@ -48,7 +53,19 @@ export const CartPage = () => {
                             Total Amonut &nbsp; <br />
                             <span>{formatPrice(totalOrderCost)}</span>
                         </div>
-                        <Button text="Buy now" onClick={() => buyNow(state.cart, totalOrderCost)} />
+                        <Button
+                            text="Buy now"
+                            onClick={() => buyNow(state.cart, totalOrderCost)}
+                            isDisabled={isDisabled}
+                        />
+                        {   isDisabled &&
+                            <p className='marginflex'>
+                                You are not logged in, please&nbsp;
+                                <Link to='/register'>register</Link>
+                                &nbsp; or &nbsp;
+                                <Link to='/login'>log in</Link>.
+                            </p>
+                        }
                     </ul>
                 </>
             }

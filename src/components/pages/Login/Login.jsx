@@ -55,7 +55,7 @@ export default function Login() {
                             <ErrorAlert text={error.errorMessage} />
                         </section>
                     }
-                    <p>
+                    <p className='marginflex'>
                         Don&apos;t have an account?
                         <Link to='/register'>&nbsp; Sign up for free</Link>
                     </p>

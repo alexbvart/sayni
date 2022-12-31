@@ -53,7 +53,7 @@ export default function Register() {
                         <ErrorAlert text={error.errorMessage} />
                     </section>
                 }
-                <p>
+                <p className='marginflex'>
                     Already have an account?
                     <Link to='/login'>&nbsp; Sign in for free</Link>
                 </p>
