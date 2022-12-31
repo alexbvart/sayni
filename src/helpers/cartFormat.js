@@ -5,6 +5,7 @@ export function onlyBasicProductInformation(cart) {
             id: product.id, 
             name: product.name,
             units: product.units,
+            price: product.price
             // availableStock: true
         }        
         // if(product.units >= product.stock) { 
