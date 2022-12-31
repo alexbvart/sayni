@@ -23,6 +23,10 @@ export const CartPage = () => {
             )
         : 0;
 
+    const generateOrder = () =>{
+        buyNow(state.cart, totalOrderCost)
+    }
+
     return (
         <div className=''>
             <div className={title}>
@@ -55,7 +59,7 @@ export const CartPage = () => {
                         </div>
                         <Button
                             text="Buy now"
-                            onClick={() => buyNow(state.cart, totalOrderCost)}
+                            onClick={() => generateOrder()}
                             isDisabled={isDisabled}
                         />
                         {   isDisabled &&

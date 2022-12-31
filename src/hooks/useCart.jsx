@@ -1,9 +1,10 @@
-import { useContext } from "react"
+import { useContext} from "react"
 import { CartContext } from "../context/CartContext/CartContext"
 import { ADD_TO_CART, CLEAR_CART, MODIFY_CART_ITEM, REMOVE_FROM_CART } from "../context/CartContext/types"
 
 export const useCart = (product) => {
     const {state,dispatch} = useContext(CartContext)
+
 
     const addItemToCart = () =>{
         dispatch({

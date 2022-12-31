@@ -6,12 +6,15 @@ import "./index.css"
 import "./normalize.css"
 import { CartProvider } from './context/CartContext/CartContext'
 import { UserProvider } from './context/UserContext/UserContext'
+import { ProductProvider } from './context/ProductContext/ProductContext'
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <UserProvider>
-    <CartProvider>
-      <RouterProvider router={router} />
-    </CartProvider>
+    <ProductProvider>
+      <CartProvider>
+        <RouterProvider router={router} />
+      </CartProvider>
+    </ProductProvider>
   </UserProvider>
 )
