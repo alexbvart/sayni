@@ -13,17 +13,16 @@ import { ErrorAlert } from '../../atoms/Alert/ErrorAlert'
 
 export default function Register() {
     const [localUser, setLocalUser] = useState({})
-    const { user, setUser, singUp, error } = useUser()
+    const { user, singUp, error } = useUser()
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        setUser(localUser)
-        singUp(user.email, user.password)
+        singUp(localUser.email, localUser.password)
     }
     const handleChange = ({ target: { name, value } }) => {
         setLocalUser({ ...localUser, [name]: value })
     }
-    if (user?.accessToken) return <Navigate to='/' />
+    if (user?.id) return <Navigate to='/' />
     return (
         <BasicLayout>
             <FormCard text='Create your account'>

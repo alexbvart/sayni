@@ -3,8 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import { UserContext } from '../context/UserContext/UserContext';
 import { loginService, loginWithGoogleService, singOutService, singUpService, userObserver } from '../services/UserService/authService';
 
-const localUser = 'loggedSayniUser';
-
 export const useUser = () => {
 
     const { user, setUser } = useContext(UserContext)
@@ -14,18 +12,9 @@ export const useUser = () => {
     const [error, setError] = useState(ErrorEmptyState)
     // if ()  throw new Error('There is not auth user-provider')
 
-    // useEffect(() => {
-    //     const loggedUserJSON = window.localStorage.getItem(localUser)
-    //     if (loggedUserJSON) {
-    //         const user = JSON.parse(loggedUserJSON)
-    //         setUser(user)
-    //         // service.setToken(user.token)
-    //     }
-    // }, [])
     useEffect(() => {
         userObserver(setUser);
-        console.log(user, "observer");
-        // return () => userObserver();
+        return () => userObserver(setUser);
     }, [])
 
 
@@ -39,7 +28,6 @@ export const useUser = () => {
             const { code: errorCode, message: errorMessage } = error;
             setError({ errorCode, errorMessage })
         }
-        // window.localStorage.removeItem(localUser)
     }
 
     const logIn = async (email, password) => {
@@ -55,12 +43,6 @@ export const useUser = () => {
                 const errorMessage = error.message;
                 setError({ errorCode, errorMessage })
             });
-
-        //  window.localStorage.setItem(
-        //      localUser, JSON.stringify(user)
-        //  )
-        //  // service.setToken(user.token)
-        //  setUser(user)
     }
 
     const loginWithGoogle = async() => {

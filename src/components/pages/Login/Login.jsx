@@ -12,18 +12,17 @@ import { BasicLayout } from '../../templates/BasicLayout/BasicLayout'
 export default function Login() {
 
     const [localUser, setLocalUser] = useState({})
-    const { user, setUser, logIn,  error } = useUser()
+    const {user, logIn,  error } = useUser()
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        setUser(localUser)
-        logIn(user.email, user.password)
+        logIn(localUser.email, localUser.password)
     }
     const handleChange = ({ target: { name, value } }) => {
         setLocalUser({ ...localUser, [name]: value })
     }
 
-    if (user?.accessToken) return <Navigate to='/' />
+    if (user?.id) return <Navigate to='/' />
     
     return (
         <>

@@ -2,13 +2,14 @@ import { createContext, useState } from 'react'
 
 const UserContext = createContext()
 
-const UserEnptyState = {
+const UserEmptyState = {
+    id: '',
     email : '',
-    password: '',
+    name: ''
 }
 
 const UserProvider = ({children}) =>{
-    const [user, setUser] = useState(UserEnptyState)
+    const [user, setUser] = useState(UserEmptyState)
 
     return(
         <UserContext.Provider
