@@ -32,7 +32,7 @@
     width: 100%;
     height: auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 }
 .counterPriceItem{
@@ -54,9 +54,17 @@
     font-weight: 700;
     font-size: 18px;
 }
+.botonsS{
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+}
 @media (max-width: 600px) {
     .imageArea img{
         max-height: 280px;
+    }
+    .nameArea{
+        /* max-height: 60px; */
     }
 }
 /* Destok */

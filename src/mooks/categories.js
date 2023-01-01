@@ -35,43 +35,43 @@ const categories =
 
 
 
-    {
-        description: "Esencial para este verano",
-        id_category: "5",
-        name: "Polos",
-    },
+    // {
+    //     description: "Esencial para este verano",
+    //     id_category: "5",
+    //     name: "Polos",
+    // },
 
 
 
-    {
-        description: "Siéntete libre y a la moda",
-        id_category: "6",
-        name: "Oversize",
-    },
+    // {
+    //     description: "Siéntete libre y a la moda",
+    //     id_category: "6",
+    //     name: "Oversize",
+    // },
 
 
 
-    {
-        description: "Básicos infaltables para tu closet",
-        id_category: "7",
-        name: "Bividis",
-    },
+    // {
+    //     description: "Básicos infaltables para tu closet",
+    //     id_category: "7",
+    //     name: "Bividis",
+    // },
 
 
 
-    {
-        description: "Cómbinalo como gustes",
-        id_category: "8",
-        name: "Crops",
-    },
+    // {
+    //     description: "Cómbinalo como gustes",
+    //     id_category: "8",
+    //     name: "Crops",
+    // },
 
 
 
-    {
-        description: "Ideal para un día de fiesta",
-        id_category: "9",
-        name: "Tops",
-    },
+    // {
+    //     description: "Ideal para un día de fiesta",
+    //     id_category: "9",
+    //     name: "Tops",
+    // },
 
 ];
 

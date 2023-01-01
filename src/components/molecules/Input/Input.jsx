@@ -1,6 +1,4 @@
-import React, { useState } from 'react'
 import {labelInputContainer,inputContainer,labelForInput,iinput,inputIcon} from './index.module.css'
-import Loupe from '../../../Icons/Loupe/index'
 import {capitalize} from '../../../helpers/stringFormat'
 export default function Input({
         className,
@@ -9,13 +7,10 @@ export default function Input({
         icon,
         name,
         type,
+        onChange,
         isRequired
     }) {
 
-    const [search, setSearch] = useState('')
-    const handleChange = (e) => {
-        setSearch(e.target.value)
-    }
     return (
         <div className={`${className} ${labelInputContainer}`}>
             <label className={labelForInput}>
@@ -28,9 +23,8 @@ export default function Input({
                 </div>
                 <input 
                     className={`${iinput}`}
-                    value={search}
                     placeholder={placeholder||label}
-                    onChange={handleChange}
+                    onChange={onChange}
                     name= {name}
                     type= {type}
                     required={isRequired}

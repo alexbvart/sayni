@@ -5,9 +5,6 @@ import categories from '../../../mooks/categories'
 import { Link } from 'react-router-dom';
 
 export default function CategoriesMenu({className}) {
-
-
-    console.log(categories)
     return (
         <ul className={`${categoriesListS} ${className}`}>
             {categories.map((item) => 

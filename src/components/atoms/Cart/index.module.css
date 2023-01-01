@@ -1,6 +1,6 @@
 .cartContainer{
-    /* background-color: red; */
     position: relative;
+    display: flex;
 }
 
 .counterProducts{
@@ -16,5 +16,7 @@
     top: -7.75px;
     background: var(--color-active);
     border-radius: 50px;
+    color: var(--color-bg-dark);
 
 }
+

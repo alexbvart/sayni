@@ -2,11 +2,14 @@ import { createBrowserRouter } from "react-router-dom";
 
 import { Error404 } from "../components/pages/Error404/Error404";
 import Home from "../components/pages/Home/Home";
-import Login from "../components/pages/Login/Login";
 import Products from "../components/pages/Products/Products";
 import Product from "../components/pages/Product/Product";
 import Layout from "../components/templates/Layout/Layout";
 import Category from "../components/pages/Category/Category";
+import { CartPage } from "../components/pages/Cart/Cart";
+import Login from "../components/pages/Login/Login";
+import Register from "../components/pages/Register/Register";
+import { Order } from "../components/pages/Order/Order";
 
 const router = createBrowserRouter([
     {
@@ -34,13 +37,22 @@ const router = createBrowserRouter([
         },
         {
             path: "/cart",
-            // element: <Cart />,
+            element: <CartPage />,
+        },
+        {
+            path: "/order/:id",
+            element: <Order />,
         },
         ]
     },
     {
         path:"/login",
         element: <Login />, 
+        errorElement: <Error404/>
+    },
+    {
+        path:"/register",
+        element: <Register />, 
         errorElement: <Error404/>
     },
 

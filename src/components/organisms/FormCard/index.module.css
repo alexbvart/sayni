@@ -1,0 +1,26 @@
+.loginLogo{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.loginCard{
+    width: 100%;
+    max-width: calc(600px - 48px);
+    margin: auto;
+    background-color: var(--color-bg-dark);
+    color: white;
+
+    padding: 64px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    border-radius: 50px;
+}
+.loginCard section{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
