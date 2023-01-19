@@ -1,4 +1,4 @@
-# Sayni - Ecoomerce
+# Sayni - Ecommerce
 Sayni es un proyecto ecommerce para [Sayni Store](https://www.instagram.com/sayni.pe/), una tienda de ropa para dama. Este proyecto fue construido para el curso [ReactJS](https://plataforma.coderhouse.com/cursos/43545/reactjs) de Coderhouse.
 
 ![SayniStore](https://i.ibb.co/rvTR9z5/iphone-multiple-screens-mockup.png)
@@ -25,7 +25,7 @@ Para ingresar a la carpeta de la aplicación usamos:
 cd sayni
 ```
 **2. Instalamos las dependencias**\
-En este punto necesitaremos tener instalado [Node](https://nodejs.org/en/) y luego instalaremos `Yarn` mediante `npm` (este se instala con `Node`).
+En este punto necesitaremos tener instalado [Node](https://nodejs.org/en/).
 ``` shell
 npm install
 ```
