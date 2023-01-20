@@ -1,5 +1,5 @@
 # Sayni - Ecommerce
-Sayni es un proyecto ecommerce para [Sayni Store](https://www.instagram.com/sayni.pe/), una tienda de ropa para dama. Este proyecto fue construido para el curso [ReactJS](https://plataforma.coderhouse.com/cursos/43545/reactjs) de Coderhouse.
+Sayni es un proyecto ecommerce para [Sayni Store](https://www.instagram.com/sayni.pe/), una tienda de ropa para dama.
 
 ![SayniStore](https://i.ibb.co/rvTR9z5/iphone-multiple-screens-mockup.png)
 
