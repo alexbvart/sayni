@@ -1,56 +1,71 @@
-.container{
+.container {
     display: grid;
     align-items: center;
-    grid-template-columns: 116px 1fr  minmax(86px, auto) ;
+    grid-template-columns: 116px minmax(86px, auto);
     grid-template-rows: auto;
-    grid-template-areas: "brand         .       cart"
-                         "search     search     search  "
-                         "categories categories categories";
+    grid-template-areas: 
+        "brand      cart"
+        "search     search  "
+        "categories categories";
     grid-gap: 16px;
     padding: 32px 28px 20px 20px;
 }
-.avatar{
+
+.avatar {
     width: 40px;
     height: 40px;
     border-radius: 50px;
 }
-.brandArea{
+
+.brandArea {
     max-width: 112px;
     grid-area: brand;
 }
-.searchArea{
+
+.searchArea {
     grid-area: search;
 }
-.categoriesArea{
+
+.categoriesArea {
     grid-area: categories;
     padding: 0;
     margin: 0;
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Old versions of Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently
                                   supported by Chrome, Edge, Opera and Firefox */
 }
-.cartArea{
-    grid-area: cart;grid-template-columns: auto auto;
+
+.cartArea {
+    grid-area: cart;
+    grid-template-columns: auto auto;
     display: grid;
+    justify-content: end;
     align-items: center;
-    justify-items: center;
+    /* justify-items: center; */
     align-content: center;
     grid-gap: 8px;
 }
 
-.userContent{
+.userContent {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
     gap: 4px;
 }
+
 .userContent a,
-.userContent button{
+.userContent button {
     color: var(--color-bg-dark);
     background: var(--color-grey);
     border-radius: 38px;
@@ -60,17 +75,33 @@
     padding: 16px 16px;
     cursor: pointer;
 }
+
 .userContent a:hover,
-.userContent button:hover{
+.userContent button:hover {
     background: var(--color-active-hover);
-    transition: background-color 0.5s ;
+    transition: background-color 0.5s;
+}
+
+@media (min-width: 600px) {
+    .container {
+        grid-template-columns: 116px 1fr minmax(86px, auto);
+        grid-template-rows: auto;
+        grid-template-areas: 
+            "brand      search     cart"
+            "categories categories categories";
+        padding: 16px 24px;
+        margin: auto;
+    }
+    .categoriesArea {
+        display: flex;
+        justify-content: center;
+    }
 }
 
 
-
-@media (min-width: 600px) {
-    .container{
-        grid-template-columns: auto  minmax(100px,1fr)  auto minmax(86px, auto) ;
+@media (min-width: 1000px) {
+    .container {
+        grid-template-columns: auto minmax(100px, 1fr) auto minmax(86px, auto);
         grid-template-areas: "brand    search     categories       cart";
         padding: 16px 24px;
         max-width: 1200px;

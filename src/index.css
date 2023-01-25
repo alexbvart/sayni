@@ -44,6 +44,10 @@ body {
   gap: 16px;
   width: 100%;
 }
+.container {
+  container-type: inline-size;
+}
+
 
 input,
 input[type="submit"],

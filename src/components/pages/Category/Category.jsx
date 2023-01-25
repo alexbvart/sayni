@@ -6,7 +6,7 @@ import categories from '../../../mooks/categories'
 import products from '../../../mooks/products'
 import ItemCard from '../../molecules/ItemCard/ItemCard'
 import ItemListContainer from '../../organisms/ItemListContainer'
-import {categorieFlex, nameArea,cartArea} from './index.module.css'
+import {categorieFlex, nameArea} from './index.module.css'
 
 
 export default function Category() {

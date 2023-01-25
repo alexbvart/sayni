@@ -8,6 +8,7 @@
     background-color: var(--color-active);
     color: var(--color-bg-dark);
     padding: 2px 0;
+    transform: all .3s;
 }
 
 .alertError{
