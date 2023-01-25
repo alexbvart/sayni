@@ -24,6 +24,12 @@
     color: var(--color-bg-dark);
     position: relative;
 }
+
+.itemList:hover{
+    /* border: 1px solid rgba(255, 255, 255, 0.3); */
+    box-shadow: 0 4px 80px rgba(43, 42, 42, 0.06);
+}
+
 .itemList h2{
     z-index: 1;
 }

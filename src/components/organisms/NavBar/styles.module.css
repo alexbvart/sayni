@@ -62,8 +62,8 @@
 }
 .userContent a:hover,
 .userContent button:hover{
-    background : var(--color-bg-dark);
-    color: var(--color-grey);
+    background: var(--color-active-hover);
+    transition: background-color 0.5s ;
 }
 
 

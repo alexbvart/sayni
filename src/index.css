@@ -7,9 +7,11 @@
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
-  --color-grey: #F7F6F9;
+  --color-grey: #F7F6F9; 
   --color-active: #EDBEEA;
+  --color-active-hover: rgba(233, 200, 230, 0.8);
   --color-bg-dark: #1A1A1A;
+  --color-bg-dark-less: #1a1a1ac9;
 
   --subtitle: 1.4 rem;
   --description: 0.8 rem;
