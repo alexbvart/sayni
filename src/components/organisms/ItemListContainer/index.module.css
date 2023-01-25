@@ -6,7 +6,7 @@
     display: grid;
     align-items: center;
     justify-content: center;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
 
     /* grid-template-columns: repeat(2,1fr); */
     padding: 1.8rem 0;
@@ -15,6 +15,11 @@
 }
 
 /* desktop sizes */
+@media (min-width: 500px) {
+    .listContainer{
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    }
+}
 @media (min-width: 600px) {
     .listContainer{
         max-width: 1200px;
