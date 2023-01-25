@@ -11,6 +11,9 @@
   --color-active: #EDBEEA;
   --color-bg-dark: #1A1A1A;
 
+  --subtitle: 1.4 rem;
+  --description: 0.8 rem;
+
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -28,10 +31,10 @@ body {
   color: var(--color-bg-dark);
 }
 
-h1 {
+/* h1 {
   font-size: 3.2em;
   line-height: 1.1;
-}
+} */
 
 .form{
   display: flex;

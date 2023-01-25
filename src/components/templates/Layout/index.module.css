@@ -8,7 +8,7 @@
     justify-content: flex-start;
 
     flex-direction: column;
-    padding: 0 18px 18px 18px;
+    padding: 1.8rem 12px;
 }
 
 /* desktop sizes */
@@ -20,6 +20,6 @@
 
 @media (min-width: 1000px) {
     .layoutOutlet{
-        padding: 0 54px 54px 54px;
+        padding: 3.4rem 2.8rem ;
     }
 }

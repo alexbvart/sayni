@@ -1,5 +1,5 @@
 # Sayni - Ecommerce
-Sayni es un proyecto ecommerce para [Sayni Store](https://www.instagram.com/sayni.pe/), una tienda de ropa para dama. 
+Sayni es un proyecto ecommerce para [Sayni Store](https://www.instagram.com/sayni.pe/), una tienda de ropa para dama.
 
 ![SayniStore](https://i.ibb.co/rvTR9z5/iphone-multiple-screens-mockup.png)
 
@@ -49,9 +49,9 @@ Es una base de datos `NoSql` donde guardamos los productos, categorias y ordenes
 **categories**
 ```javascript
     {
-        description: " ",                  //string
+        description: " ",                 //string
         id_category: " ",                 //string
-        name: "",                            //string
+        name: "",                         //string
     }
 ```
 <details>
@@ -69,15 +69,15 @@ Es una base de datos `NoSql` donde guardamos los productos, categorias y ordenes
 **products**
 ```javascript
     {
-        id: "",,                                 //number
-        id_category: "",                  //number
-        name:  " ",                          //string
-        colors: ["", "", "", ""],           //array
-        material: " ",                       //string
-        price: "", ,                           //number
-        size:  ["", "", "", ""],             //array
-        stock: 10,,                          //number
-        default_image:  " ",            //string",
+        id: "",,                         //number
+        id_category: "",                 //number
+        name:  " ",                      //string
+        colors: ["", "", "", ""],        //array
+        material: " ",                   //string
+        price: "", ,                     //number
+        size:  ["", "", "", ""],         //array
+        stock: 10,,                      //number
+        default_image:  " ",             //string",
     },
 ```
 <details>
@@ -103,8 +103,8 @@ Es una base de datos `NoSql` donde guardamos los productos, categorias y ordenes
 {
     user: {                     // map
         email: "",              // string
-        name: "",              // string
-        id: "",                    // string
+        name: "",               // string
+        id: "",                 // string
     },
     date: "",                   // timestamp
     items: [                    // array
