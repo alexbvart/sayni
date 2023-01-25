@@ -14,7 +14,8 @@ export default function ItemCard({name,price,img,id}) {
         >
             <div className={increasesNamVisibility}>
             </div>
-                <h2> {name} </h2> 
+            
+            <h2> {name} </h2> 
             <div className={addToCart}>
                 <p>S/. {price}.00</p>
                 <div className={bagWrapper} >

@@ -7,9 +7,14 @@
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
-  --color-grey: #F7F6F9;
+  --color-grey: #F7F6F9; 
   --color-active: #EDBEEA;
+  --color-active-hover: rgba(233, 200, 230, 0.8);
   --color-bg-dark: #1A1A1A;
+  --color-bg-dark-less: #1a1a1ac9;
+
+  --subtitle: 1.4 rem;
+  --description: 0.8 rem;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -28,10 +33,10 @@ body {
   color: var(--color-bg-dark);
 }
 
-h1 {
+/* h1 {
   font-size: 3.2em;
   line-height: 1.1;
-}
+} */
 
 .form{
   display: flex;
@@ -39,6 +44,10 @@ h1 {
   gap: 16px;
   width: 100%;
 }
+.container {
+  container-type: inline-size;
+}
+
 
 input,
 input[type="submit"],
